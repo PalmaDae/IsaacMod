@@ -1,0 +1,3 @@
+<items gfxroot = "gfx/items/" version = 1>
+    <passive id = "1" name = "Damage potion" gfx = "damage_potion_item.png" description = "It's smells like puer" quality = "2" cache = "damage"
+</items>
