@@ -1,14 +1,12 @@
 local mod = RegisterMod("My mod", 1)
 
-local damagePotion = Isaac.GetItemById("Damage Potion")
-
+local damagePotion = Isaac.GetItemIdByName("Damage Potion")
 local damagePotionDamage = 1
 
 function mod:EvaluateCache(player, cacheFlags)
-    if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
+    if (cacheFlags & CacheFlag.CACHE_DAMAGE) == CacheFlag.CACHE_DAMAGE then
         local itemCount = player:GetCollectibleNum(damagePotion)
-        local damageToAdd = damagePotionDamage * itemCount
-        player.Damage = player.Damage + damageToAdd
+        player.Damage = player.Damage + damagePotionDamage * itemCount
     end
 end
 
